@@ -1,0 +1,13 @@
+[core]
+	excludesfile = /Users/tmoreira2020/.gitignore_global
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Thiago Moreira
+	email = tmoreira2020@gmail.com
+	signingkey = 4F6C93A004E3EAF0CF4FF501F62EFB6E967A16AC
+[commit]
+	template = /Users/tmoreira2020/.stCommitMsg
