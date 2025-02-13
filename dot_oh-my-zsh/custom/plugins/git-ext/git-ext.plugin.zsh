@@ -11,10 +11,6 @@ function git_tree {
 	git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
 }
 
-function git_log_leroy() {
-	git log --pretty=format:"%H %""s" | grep LEROYMERLIN-$1 | cut -c 1-40 | sed '1!G;h;$!d'
-}
-
 alias ga="gitk --all"
 alias gbc="git checkout -b"
 alias gbd="git branch -D"
@@ -25,7 +21,6 @@ alias gconf="cat .git/config"
 alias gd="git diff"
 alias gdl="git diff HEAD~"
 alias gg="git gui"
-alias gll="git_log_leroy"
 alias gp="git push"
 alias gpob="git push origin $(current_branch)"
 alias gpr="git pull --rebase"
