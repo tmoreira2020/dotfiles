@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+{{ template "shared_script_utils.bash" . }}
+
+{{ if eq .chezmoi.os "darwin" }}
+
+if [[ "${BASH_VERSINFO:-0}" -le 4 ]]; then
+    header "🍺  Installing Bash greater than 4.x"
+    brew install bash
+
+{{ end }}
+
+_safeExit_
