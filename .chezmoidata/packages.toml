@@ -3,12 +3,7 @@
         casks = [
             "1password",
             "1password-cli",
-            "git-credential-manager",
-            "grandperspective",              # Disk usage visualizer
             "iterm2",                        # Terminal emulator
-            "jordanbaird-ice",               # Menu bar customization
-            "lingon-x",
-            "tailscale",
             "visual-studio-code",
         ]
         formulae = [
