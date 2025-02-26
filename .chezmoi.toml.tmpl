@@ -1,0 +1,9 @@
+{{- $use_secrets := promptBoolOnce . "use_secrets" "Use secrets from 1Password? (true/false)" -}}
+{{- $personal_computer := promptBoolOnce . "personal_computer" "Is this a personal computer for daily driving? (true/false)" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+    email             = {{ $email | quote }}
+    github_user       = "tmoreira2020"
+    personal_computer = {{ $personal_computer }}
+    use_secrets       = {{ $use_secrets }}

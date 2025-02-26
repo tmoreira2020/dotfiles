@@ -1,0 +1,47 @@
+[packages.homebrew]
+    [packages.homebrew.common]
+        casks = [
+            "1password",
+            "1password-cli",
+            "git-credential-manager",
+            "grandperspective",              # Disk usage visualizer
+            "iterm2",                        # Terminal emulator
+            "jordanbaird-ice",               # Menu bar customization
+            "lingon-x",
+            "tailscale",
+            "visual-studio-code",
+        ]
+        formulae = [
+            "atuin",           # Better shell history
+            "bat",             # cat with syntax highlighting and Git integration
+            "chezmoi",         # Dotfile manager
+            "coreutils",
+            "eza",             # ls replacement
+            "fd",              # fd-find
+            "findutils",       # GNU find, locate, updatedb, and xargs
+            "fzf",             # Fuzzy finder
+            "gawk",            # GNU awk
+            "git",
+            "gping",           # Ping, but with a graph
+            "grep",
+            "jq",              # Lightweight and flexible command-line JSON processor
+            "mas",             # Mac App Store command-line interface
+            "ssh-copy-id",     # Add a public key to a remote machine's authorized_keys file
+            "tree",            # Display directories as trees (with optional color/HTML output)
+            "vivid",           # https://github.com/sharkdp/vivid
+            "wget",
+            "zoxide",          # A faster way to navigate your filesystem
+        ]
+    [packages.homebrew.personal_computer]
+        casks = [
+            "google-chrome",
+            "obsidian",
+            "slack",
+            "whatsapp",
+        ]
+        formulae = []
+[packages.mas]
+    [packages.mas.common]
+        apps = []
+    [packages.mas.personal_computer]
+        apps = []
