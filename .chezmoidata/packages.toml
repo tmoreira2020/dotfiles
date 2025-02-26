@@ -3,6 +3,8 @@
         casks = [
             "1password",
             "1password-cli",
+            "docker",
+            "gitkraken",
             "iterm2",                        # Terminal emulator
             "visual-studio-code",
         ]
@@ -11,6 +13,7 @@
             "bat",             # cat with syntax highlighting and Git integration
             "chezmoi",         # Dotfile manager
             "coreutils",
+            "corretto@21",
             "eza",             # ls replacement
             "fd",              # fd-find
             "findutils",       # GNU find, locate, updatedb, and xargs
@@ -21,6 +24,7 @@
             "grep",
             "jq",              # Lightweight and flexible command-line JSON processor
             "mas",             # Mac App Store command-line interface
+            "maven@3.8",
             "ssh-copy-id",     # Add a public key to a remote machine's authorized_keys file
             "tree",            # Display directories as trees (with optional color/HTML output)
             "vivid",           # https://github.com/sharkdp/vivid
@@ -32,6 +36,7 @@
             "google-chrome",
             "obsidian",
             "slack",
+            "spotify",
             "whatsapp",
         ]
         formulae = []
