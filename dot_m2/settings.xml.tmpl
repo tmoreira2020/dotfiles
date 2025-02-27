@@ -1,0 +1,22 @@
+<settings 
+	xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0	http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<servers>
+        <server>
+            <id>gitlab-maven</id>
+            <configuration>
+                <httpHeaders>
+                <property>
+                    <name>Private-Token</name>
+                    <value>{{ onepasswordRead "op://gj4yld6r66nrznbhf6xuezjshm/vafxntcjh64cmiewrwooyzfeey/gitlab-personal-access-token" }}</value>
+                </property>
+                </httpHeaders>
+            </configuration>
+        </server>
+		<server>
+            <id>github</id>
+            <username>tmoreira2020</username>
+            <password>{{ onepasswordRead "op://gj4yld6r66nrznbhf6xuezjshm/3ignoby3tv6ohzg5bvikamltnm/github-personal-token" }}</password>
+        </server>
+	</servers>
+</settings>
