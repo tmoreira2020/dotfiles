@@ -108,3 +108,6 @@ export GPG_TTY
 
 # Adding autocomplete for 'we'
 [ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
+
+# Initializing Atuin
+eval "$(atuin init zsh)"
