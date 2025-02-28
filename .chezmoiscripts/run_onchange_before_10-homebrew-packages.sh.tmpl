@@ -11,23 +11,11 @@ formulae=(
     {{ range $package := .packages.homebrew.common.formulae }}
     "{{ $package }}"
     {{ end }}
-
-    {{ if .personal_computer }}
-    {{ range $package := .packages.homebrew.personal_computer.formulae }}
-    "{{ $package }}"
-    {{ end }}
-    {{ end }}
 )
 
 casks=(
     {{ range $package := .packages.homebrew.common.casks }}
     "{{ $package }}"
-    {{ end }}
-
-    {{ if .personal_computer }}
-    {{ range $package := .packages.homebrew.personal_computer.casks }}
-    "{{ $package }}"
-    {{ end }}
     {{ end }}
 )
 
@@ -45,12 +33,6 @@ for formula in ${formulae[@]}; do
         if [[ ! -e "${BREW_DIR}/${formula}" ]]; then
             brew install -q --formula ${formula}
         fi
-
-        # https://github.com/microsoft/Git-Credential-Manager-for-Mac-and-Linux/blob/master/Install.md
-        if [[ ${formula} == "git-credential-manager" ]]; then
-            git-credential-manager install
-        fi
-
     fi
 done
 

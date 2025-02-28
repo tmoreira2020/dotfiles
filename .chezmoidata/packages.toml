@@ -6,7 +6,11 @@
             "corretto@21",
             "docker",
             "gitkraken",
+            "google-chrome",
             "iterm2",                        # Terminal emulator
+            "slack",
+            "spotify",
+            "whatsapp",
             "visual-studio-code",
         ]
         formulae = [
@@ -33,17 +37,6 @@
             "wget",
             "zoxide",          # A faster way to navigate your filesystem
         ]
-    [packages.homebrew.personal_computer]
-        casks = [
-            "google-chrome",
-            "obsidian",
-            "slack",
-            "spotify",
-            "whatsapp",
-        ]
-        formulae = []
 [packages.mas]
     [packages.mas.common]
-        apps = []
-    [packages.mas.personal_computer]
         apps = []
