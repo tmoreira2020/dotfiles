@@ -14,6 +14,7 @@
             "bat",             # cat with syntax highlighting and Git integration
             "chezmoi",         # Dotfile manager
             "coreutils",
+            "docker-machine",
             "eza",             # ls replacement
             "fd",              # fd-find
             "findutils",       # GNU find, locate, updatedb, and xargs
