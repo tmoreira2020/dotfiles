@@ -4,10 +4,16 @@
 
 {{ if eq .chezmoi.os "darwin" }}
 
-header "🍺  Installing docker-machine OCI driver"
-sudo curl -L https://github.com/rancher-plugins/rancher-machine-driver-oci/releases/download/v1.3.1/docker-machine-driver-oci-darwin -o /usr/local/bin/docker-machine-driver-oci
-sudo chown root:wheel /usr/local/bin/docker-machine-driver-oci
-sudo chmod u+s /usr/local/bin/docker-machine-driver-oci
+TARGET_PATH="/usr/local/bin/docker-machine-driver-oci"
+
+if [ ! -f "$TARGET_PATH" ]; then
+    header "🍺  Installing docker-machine OCI driver"
+    sudo curl -L https://github.com/rancher-plugins/rancher-machine-driver-oci/releases/download/v1.3.1/docker-machine-driver-oci-darwin -o "$TARGET_PATH"
+    sudo chown root:wheel "$TARGET_PATH"
+    sudo chmod u+s "$TARGET_PATH"
+else
+    header "File '$TARGET_PATH' already exists. Skipping download."
+fi
 
 {{ end }}
 
