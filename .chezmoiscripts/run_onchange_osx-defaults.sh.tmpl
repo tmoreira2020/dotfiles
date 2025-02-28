@@ -1,0 +1,46 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+{{ template "shared_script_utils.bash" . }}
+
+# Mac OS X configuration
+# Heavily customized from Jeff Geerling's Dotfiles. Original notes below:
+# ==============================================================
+#
+# This configuration applies to the latest version of macOS (currently 11.3),
+# and sets up preferences and configurations for all the built-in services and
+# apps. Third-party app config should be done elsewhere.
+#
+# If you want to figure out what default needs changing, do the following:
+#
+#   1. `cd /tmp`
+#   2. Store current defaults in file: `defaults read > before`
+#   3. Make a change to your system.
+#   4. Store new defaults in file: `defaults read > after`
+#   5. Diff the files: `diff before after`
+
+# Set Defaults
+# ######################
+LOGFILE="${HOME}/logs/$(basename "$0").log"
+QUIET=false
+LOGLEVEL=ERROR
+VERBOSE=false
+FORCE=false
+DRYRUN=false
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Set trackpad speed to a reasonable number"
+defaults write -g com.apple.trackpad.scaling -float 1
+
+# Enable clicking with just a touch
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+
+
+notice "osx-defaults: Done. Note that some of these changes require a logout/restart to take effect."
+_safeExit_
+
+{{- end }}
