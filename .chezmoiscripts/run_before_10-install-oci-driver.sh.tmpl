@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+{{ template "shared_script_utils.bash" . }}
+
+{{ if eq .chezmoi.os "darwin" }}
+
+header "🍺  Installing docker-machine OCI driver"
+sudo curl -L https://github.com/rancher-plugins/rancher-machine-driver-oci/releases/download/v1.3.1/docker-machine-driver-oci-darwin -o /usr/local/bin/docker-machine-driver-oci
+sudo chown root:wheel /usr/local/bin/docker-machine-driver-oci
+sudo chmod u+s /usr/local/bin/docker-machine-driver-oci
+
+{{ end }}
+
+_safeExit_
