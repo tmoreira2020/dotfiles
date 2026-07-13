@@ -3,10 +3,15 @@
         casks = [
             "1password",
             "1password-cli",
+            "claude",
             "corretto@21",
+            "cursor",
+            "displaylink",
             "docker",
+            "eclipse-jee",
             "gitkraken",
             "google-chrome",
+            "google-drive",
             "iterm2",                        # Terminal emulator
             "slack",
             "spotify",
