@@ -101,7 +101,7 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export ANT_OPTS='-Xmx10240m --add-opens java.base/java.lang.invoke=ALL-UNNAMED'
-export MAVEN_OPTS='-ea -Xmx4096m'
+export MAVEN_OPTS='-e -Xmx4096m'
 export ENVIRONMENT=local
 GPG_TTY=$(tty)
 export GPG_TTY
