@@ -1,7 +1,7 @@
 <settings 
-	xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0	http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	<servers>
+    xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0    http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
         <server>
             <id>gitlab-maven</id>
             <configuration>
@@ -13,7 +13,7 @@
                 </httpHeaders>
             </configuration>
         </server>
-		<server>
+        <server>
             <id>github</id>
             <username>tmoreira2020</username>
             <password>{{ onepasswordRead "op://gj4yld6r66nrznbhf6xuezjshm/3ignoby3tv6ohzg5bvikamltnm/github-personal-token" }}</password>
@@ -24,5 +24,5 @@
             <username>{{ onepasswordRead "op://fhcdtg555pwpp2k4ac42gcig6i/obromussrozksmevnmcq6k4te4/username" }}</username>
             <password>{{ onepasswordRead "op://fhcdtg555pwpp2k4ac42gcig6i/obromussrozksmevnmcq6k4te4/credential" }}</password>
         </server>
-	</servers>
+    </servers>
 </settings>
