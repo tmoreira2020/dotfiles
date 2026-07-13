@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+{{ template "shared_script_utils.bash" . }}
+
+{{ if eq .chezmoi.os "darwin" }}
+
+TARGET_PATH="/usr/local/bin/docker-machine-driver-hetzner"
+
+if [ ! -f "$TARGET_PATH" ]; then
+    header "🍺  Installing docker-machine Hetzner driver"
+    sudo curl -L https://github.com/JonasProgrammer/docker-machine-driver-hetzner/releases/download/5.0.2/docker-machine-driver-hetzner_5.0.2_darwin_arm64.tar.gz | sudo tar -xzv -C /usr/local/bin
+    sudo chown root:wheel "$TARGET_PATH"
+    sudo chmod +x "$TARGET_PATH"
+else
+    header "File '$TARGET_PATH' already exists. Skipping download."
+fi
+
+{{ end }}
+
+_safeExit_
