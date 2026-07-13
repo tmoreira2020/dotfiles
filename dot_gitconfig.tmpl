@@ -1,0 +1,21 @@
+[core]
+        excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[user]
+        name = Thiago Moreira
+        email = tmoreira2020@gmail.com
+        signingkey = {{ .chezmoi.homeDir }}/.ssh/id_ed25519.pub
+[commit]
+        gpgsign = true
+[gpg]
+        format = ssh
+        program = gpg
+[tag]
+        forceSignAnnotated = false
+[gpg "ssh"]
+        program =
+        allowedSignersFile =
