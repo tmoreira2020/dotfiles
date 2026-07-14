@@ -20,13 +20,16 @@ casks=(
 )
 
 # Safely populate arrays even when brew isn't installed or no packages are present.
-# Use readarray (mapfile) to avoid word-splitting issues and suppress errors.
+# Avoid readarray/mapfile (bash >=4 only); macOS ships bash 3.2 as /bin/bash.
+currently_installed_formulae=()
+currently_installed_casks=()
 if command -v brew >/dev/null 2>&1; then
-    readarray -t currently_installed_formulae < <(brew list --formula -1 2>/dev/null || true)
-    readarray -t currently_installed_casks < <(brew list --cask -1 2>/dev/null || true)
-else
-    currently_installed_formulae=()
-    currently_installed_casks=()
+    while IFS= read -r formula; do
+        currently_installed_formulae+=("${formula}")
+    done < <(brew list --formula -1 2>/dev/null)
+    while IFS= read -r cask; do
+        currently_installed_casks+=("${cask}")
+    done < <(brew list --cask -1 2>/dev/null)
 fi
 
 header "Install Homebrew packages"
