@@ -19,8 +19,15 @@ casks=(
     {{ end }}
 )
 
-currently_installed_formulae=($(brew list --formula -1))
-currently_installed_casks=($(brew list --cask -1))
+# Safely populate arrays even when brew isn't installed or no packages are present.
+# Use readarray (mapfile) to avoid word-splitting issues and suppress errors.
+if command -v brew >/dev/null 2>&1; then
+    readarray -t currently_installed_formulae < <(brew list --formula -1 2>/dev/null || true)
+    readarray -t currently_installed_casks < <(brew list --cask -1 2>/dev/null || true)
+else
+    currently_installed_formulae=()
+    currently_installed_casks=()
+fi
 
 header "Install Homebrew packages"
 
