@@ -39,6 +39,7 @@
             "mas",             # Mac App Store command-line interface
             "maven",
             "ssh-copy-id",     # Add a public key to a remote machine's authorized_keys file
+            "supabase",
             "tree",            # Display directories as trees (with optional color/HTML output)
             "vivid",           # https://github.com/sharkdp/vivid
             "wget",
